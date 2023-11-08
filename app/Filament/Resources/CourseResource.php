@@ -36,6 +36,7 @@ class CourseResource extends Resource
                         ->maxLength(255),
                     TextInput::make('embed_url')
                         ->required()
+                        ->placeholder('https://www.youtube.com/embed/VIDEO_ID')
                 ])->columns("2"),
                 RichEditor::make('description')
                     ->required()

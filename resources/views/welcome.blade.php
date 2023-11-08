@@ -67,6 +67,11 @@
                         <a href="#" class="navbar-link">Hackatons</a>
                     </li>
 
+                    <li>
+                        <a href="{{ route('dashboard') }}" class="navbar-link">Courses</a>
+                    </li>
+                    
+
                 </ul>
 
                 <div class="header-actions">
