@@ -34,7 +34,7 @@ function CoursePage({ Course, Provider, auth }) {
                                     {formatCreatedAt(new Date(Course.created_at))}
                                 </span>
                                 <div className="flex items-center ">
-                                    <img src={`/storage/${Provider.profile_picture_path}`} className="h-12 w-12 rounded-full" alt={Provider.name} />
+                                    <img src={`https://yc-camp-6fe10c6f54fd.herokuapp.com/storage/${Provider.profile_picture_path}`} className="h-12 w-12 rounded-full" alt={Provider.name} />
                                     <div className="p-2">
                                         <h5 className="font-medium mb-1 text-xl  text-gray-900">
                                             {Provider.name}
