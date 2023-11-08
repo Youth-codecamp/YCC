@@ -60,7 +60,7 @@ function CourseCard({ Course, Users, authUser }) {
     return (
         <div className="w-full bg-white border border-gray-200 rounded-lg">
             <div className="flex items-center space-x-3 w-full px-5 bg-gray-50 rounded-t-lg">
-                <img src={Course.provider.profile_picture_path} className="h-12 w-12 rounded-full" alt={Course.provider.name} />
+                <img src={`storage/${Course.provider.profile_picture_path}`} className="h-12 w-12 rounded-full" alt={Course.provider.name} />
                 <div>
                     <h5 className="font-medium mb-1 text-xl text-gray-900">{Course.provider.name}</h5>
                     <span className="font-medium mb-1 text-sm text-gray-900">
@@ -69,7 +69,7 @@ function CourseCard({ Course, Users, authUser }) {
                 </div>
             </div>
             <div className="flex flex-col items-center pb-10 relative">
-                <img className="w-32 h-32 mb-3 rounded-lg object-cover" src={Course.thumbnail_path} alt={Course.name} />
+                <img className="w-32 h-32 mb-3 rounded-lg object-cover" src={`storage/${Course.thumbnail_path}`} alt={Course.name} />
                 <h5 className="mb-1 text-xl font-medium text-gray-900">{Course.name}</h5>
 
                 <div className="flex flex-wrap mt-4 gap-2 md:mt-6 w-full px-5 mb-2">
