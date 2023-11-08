@@ -3,6 +3,7 @@ import TextInput from "@/Components/TextInput";
 import Modal from "@/Components/Modal";
 import PrimaryButton from "@/Components/PrimaryButton";
 import InputError from "@/Components/InputError";
+import { useForm } from '@inertiajs/react';
 
 function formatCreatedAt(date) {
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -23,9 +24,15 @@ function CommentModal({ Course, show, user ,setShowModal }) {
     const close = () => {
         setShowModal(false)
     };
+    const form = useForm({
+        content: '',
+        course_id: props.Course.id,
+      });
 
     const submit = () => {
-        // Implement the submit logic here
+        form.post(route('create-comment'), {
+            onFinish: () => form.reset('content')
+        });
     };
 
     return (

@@ -43,7 +43,7 @@ class CourseResource extends Resource
                     ->fileAttachmentsDirectory('courses')
                     ->columnSpanFull(),
                 FileUpload::make("thumbnail_path")
-                    ->label("Upload post cover")
+                    ->label("Upload course cover")
                     ->image()
                     ->required()
                     ->directory("courses")
