@@ -2,16 +2,23 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProviderResource\Pages;
-use App\Filament\Resources\ProviderResource\RelationManagers;
-use App\Models\Provider;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Pages\EditProvider;
+use App\Models\Provider;
+use Filament\Forms\Form;
+use Pages\ListProviders;
+use Pages\CreateProvider;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\ProviderResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ProviderResource\RelationManagers;
 
 class ProviderResource extends Resource
 {
@@ -81,9 +88,9 @@ class ProviderResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProviders::route('/'),
-            'create' => Pages\CreateProvider::route('/create'),
-            'edit' => Pages\EditProvider::route('/{record}/edit'),
+            'index' => ListProviders::route('/'),
+            'create' => CreateProvider::route('/create'),
+            'edit' => EditProvider::route('/{record}/edit'),
         ];
     }
 }
