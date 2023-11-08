@@ -18,11 +18,10 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::middleware(['auth', 'verified'])->group(function () {  
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/user/create/comment', [RequestsController::class, 'storeComment'])->name('create-comment');
     Route::post('/user/create/like', [RequestsController::class, 'storeLike'])->name('create-like');
