@@ -15,7 +15,7 @@ function formatCreatedAt(date) {
 }
 
 function CoursePage({ Course, Provider, auth }) {
-    const providerProfile = `/${Provider.profile_url}`;
+    const providerProfile = Provider.profile_picture_path;
 
     return (
         <AuthenticatedLayout
