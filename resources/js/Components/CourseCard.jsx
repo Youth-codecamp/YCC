@@ -73,7 +73,7 @@ function CourseCard({ Course, Users, authUser }) {
                 <h5 className="mb-1 text-xl font-medium text-gray-900">{Course.name}</h5>
 
                 <div className="flex flex-wrap mt-4 gap-2 md:mt-6 w-full px-5 mb-2">
-                    <Link to={`/watch_course/${Course.id}/${Course.name}`} className="flex flex-grow">
+                    <Link href={`/watch/course/${Course.id}/${Course.name}`} className="flex flex-grow">
                         <PrimaryButton className="py-3 flex flex-grow">
                             Watch Course
                         </PrimaryButton>

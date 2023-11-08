@@ -14,7 +14,7 @@ class CourseController extends Controller
         $Course = Course::findOrFail($CoursePar);
         $Provider = Provider::find($Course->provider_id);
          if ($Course) {
-             return Inertia::render('WatchCourse', compact('Course','Provider'));
+             return Inertia::render('Watch', compact('Course','Provider'));
          } else {
              abort(404);
          }

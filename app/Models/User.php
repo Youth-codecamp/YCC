@@ -7,10 +7,23 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Filament\Models\Contracts\HasName;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasName, FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    public function getFilamentName(): string
+    {
+        return "{$this->name}";
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return auth()->user()->role === "admin";
+    }
 
     /**
      * The attributes that are mass assignable.

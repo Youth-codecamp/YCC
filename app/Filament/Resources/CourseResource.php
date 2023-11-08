@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables;
 use App\Models\Course;
 use Filament\Forms\Form;
@@ -31,13 +32,14 @@ class CourseResource extends Resource
                 Section::make('Course Details')->schema([
                     TextInput::make('name')
                         ->required()
-                        ->unique("courses", "name")
+                        ->unique("courses", "name", ignoreRecord: true)
                         ->maxLength(255),
                     TextInput::make('embed_url')
                         ->required()
                 ])->columns("2"),
-                MarkdownEditor::make('description')
+                RichEditor::make('description')
                     ->required()
+                    ->fileAttachmentsDirectory('courses')
                     ->columnSpanFull(),
                 FileUpload::make("thumbnail_path")
                     ->label("Upload post cover")

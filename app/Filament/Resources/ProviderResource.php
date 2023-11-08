@@ -4,11 +4,8 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use Pages\EditProvider;
 use App\Models\Provider;
 use Filament\Forms\Form;
-use Pages\ListProviders;
-use Pages\CreateProvider;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
@@ -88,9 +85,9 @@ class ProviderResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListProviders::route('/'),
-            'create' => CreateProvider::route('/create'),
-            'edit' => EditProvider::route('/{record}/edit'),
+            'index' => Pages\ListProviders::route('/'),
+            'create' => Pages\CreateProvider::route('/create'),
+            'edit' => Pages\EditProvider::route('/{record}/edit'),
         ];
     }
 }
