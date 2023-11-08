@@ -20,11 +20,13 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('home');
+    Route::get('/', function () {
+        return view('welcome');
+    });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::post('/user/create/comment',[RequestsController::class,'storeComment'])->name('create-comment');
-    Route::post('/user/create/like',[RequestsController::class,'storeLike'])->name('create-like');
-    Route::get('/watch/course/{id}/{name}',[CourseController::class,'index'])->name('watch_course');
+    Route::post('/user/create/comment', [RequestsController::class, 'storeComment'])->name('create-comment');
+    Route::post('/user/create/like', [RequestsController::class, 'storeLike'])->name('create-like');
+    Route::get('/watch/course/{id}/{name}', [CourseController::class, 'index'])->name('watch_course');
 });
 
 Route::middleware('auth')->group(function () {
@@ -33,4 +35,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
