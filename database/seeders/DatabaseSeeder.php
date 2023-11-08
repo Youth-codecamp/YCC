@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'vpnzoe27@gmail.com',
             'password' => Hash::make("Kimironko2023"),
             'profile_photo_path' => 'users/user.png',
-            'is_verified' => '',
             'role' => 'admin'
         ]);
     }
