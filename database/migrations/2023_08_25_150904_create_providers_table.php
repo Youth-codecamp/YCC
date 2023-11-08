@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('providers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('likes');
-            $table->string("profile_url");
+            $table->bigInteger('likes')->default(0);
+            $table->string("profile_picture_path");
             $table->timestamps();
         });
     }

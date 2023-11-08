@@ -8,6 +8,14 @@ use App\Models\Provider;
 class Course extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "name",
+        "embed_url",
+        "description",
+        "provider_id",
+        "thumbnail_path",
+        "tags",
+    ];
     public function provider()
     {
         return $this->belongsTo(Provider::class);

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('embed_url');
             $table->longText('description');
-            $table->string('thumbnail_url');
+            $table->string('thumbnail_path');
             $table->string('tags');
             $table->foreignId('provider_id');
             $table->timestamps();
